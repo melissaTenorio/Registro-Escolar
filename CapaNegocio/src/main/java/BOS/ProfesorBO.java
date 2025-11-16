@@ -4,23 +4,23 @@
  */
 package BOS;
 
+import enumRoles.RolUsuario;
+
 /**
  *
  * @author melis
  */
 public class ProfesorBO extends UsuarioBO {
-    private String idProfesor;
+
     private String departamento;
 
-    public ProfesorBO(String idProfesor, String departamento, String idUsuario, String contraseña, String tipo, String nombre, String Apellido, String fechaNacimiento, String direccion, String telefono, int edad, String domicilio, String genero, String CURP, String Correo) {
-        super(idUsuario, contraseña, tipo, nombre, Apellido, fechaNacimiento, direccion, telefono, edad, domicilio, genero, CURP, Correo);
-        this.idProfesor = idProfesor;
+    public ProfesorBO(String departamento, String idUsuario, String contraseña, RolUsuario rol, String nombre, String Apellido, String fechaNacimiento, String direccion, String telefono, int edad, String domicilio, String genero, String CURP, String Correo) {
+        super(idUsuario, contraseña, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, edad, domicilio, genero, CURP, Correo);
         this.departamento = departamento;
     }
 
-    public String getIdProfesor() {
-        return idProfesor;
+    public String getDepartamento() {
+        return departamento;
     }
-    
-    
+
 }

@@ -4,19 +4,27 @@
  */
 package BOS;
 
+import java.time.LocalDate;
+import java.util.Objects;
+
 /**
  *
  * @author melis
  */
 public class CalificacionBO {
     private String idCalificacion;
-    private double valor;
-    private String tipo;
-
-    public CalificacionBO(String idCalificacion, double valor, String tipo) {
-        this.idCalificacion = idCalificacion;
-        this.valor = valor;
-        this.tipo = tipo;
+    private Inscripcion inscripcion; // Asociación al BOS
+    private double valor; 
+    private String tipo; // Ej: Parcial 1, Tarea, Final
+    private LocalDate fechaRegistro;
+    
+   public Calificacion(String idCalificacion, Inscripcion inscripcion, double valor, String tipo) throws ReglaNegocioException {
+        this.idCalificacion = Objects.requireNonNull(idCalificacion);
+        this.inscripcion = Objects.requireNonNull(inscripcion);
+        this.fechaRegistro = LocalDate.now();
+        this.tipo = Objects.requireNonNull(tipo);
+        // Llama al método de lógica para inicializar el estado
+        this.actualizarValor(valor); 
     }
 
     public String getIdCalificacion() {

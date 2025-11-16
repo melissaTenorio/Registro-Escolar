@@ -4,20 +4,23 @@
  */
 package BOS;
 
+import enumRoles.RolUsuario;
+
 /**
  *
  * @author melis
  */
-public class AdministradorBO extends UsuarioBO{
-    private String idAdmin;
-
-    public AdministradorBO(String idUsuario, String contraseña, String tipo, String nombre, String Apellido, String fechaNacimiento, String direccion, String telefono, int edad, String domicilio, String genero, String CURP, String Correo) {
-        super(idUsuario, contraseña, tipo, nombre, Apellido, fechaNacimiento, direccion, telefono, edad, domicilio, genero, CURP, Correo);
+public class AdministradorBO extends UsuarioBO {
+    private String carreraAsignada; /*saber a que carrera o departamento pertenece*/
+    
+    public AdministradorBO(String carreraAsignada, String idUsuario, String contraseña, RolUsuario rol, String nombre, String Apellido, String fechaNacimiento, String direccion, String telefono, int edad, String domicilio, String genero, String CURP, String Correo) {
+        super(idUsuario, contraseña, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, edad, domicilio, genero, CURP, Correo);
+        this.carreraAsignada = carreraAsignada;
     }
-
-    public String getIdAdmin() {
-        return idAdmin;
+    
+    /*solo define a que tiene permiso el administrador*/
+    public boolean soloGestiona(){
+    return "direccion".equalsIgnoreCase(carreraAsignada);
     }
-
-
+    
 }
