@@ -10,6 +10,6 @@ package enumRoles;
  */
 public enum RolUsuario {
     AMINISTRADOR, /*tiene acceso a toda la gestion academica*/
-    ESTUDIANTE, /*acesso a registros y tareas*/
+    ALUMNO, /*acesso a registros y tareas*/
     PROFESOR /*acceso a informacion UNICA y PROPIA del mismo alumno*/
 }

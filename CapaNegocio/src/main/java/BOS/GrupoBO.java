@@ -5,7 +5,8 @@
 package BOS;
 
 import java.util.ArrayList;
-import negocioExcepciones.reglaExcepcion;
+import java.util.List;
+import negocioExcepciones.ReglaExcepcion;
 
 /**
  *
@@ -18,7 +19,7 @@ private String idGrupo;
     private HorarioBO horario;
     private int maxCapacidad = 30;
     // Lista de inscripciones para controlar el cupo????
-    private List<Inscripcion> inscripciones ;
+    private List<InscripcionBO> inscripciones ;
 
     public GrupoBO(String idGrupo, MateriaBO asignatura, ProfesorBO profesorAsignado, HorarioBO horario) {
         this.idGrupo = idGrupo;
@@ -50,9 +51,9 @@ private String idGrupo;
         return maxCapacidad;
     }
 
-    public void agregarAlumno(Inscripcion inscripcion)throws reglaExcepcion{
+    public void agregarAlumno(InscripcionBO inscripcion)throws ReglaExcepcion{
         if (getMaxCapacidad()<=0) {
-            throw new reglaExcepcion("el grupo esta lleno");
+            throw new ReglaExcepcion("el grupo esta lleno");
         }
         this.inscripciones.add(inscripcion);
     }

@@ -4,6 +4,8 @@
  */
 package BOS;
 
+import java.time.*;
+
 /**
  *
  * @author melis
@@ -11,22 +13,21 @@ package BOS;
 public abstract class PersonaBO {
     private String nombre;
     private String Apellido;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private String direccion;
     private String telefono;
-    private int edad;
+   // private int edad; quitaremos la edad para que el sistema la calcule por si solo con la fecha de nacimiento
     private String domicilio;
     private String genero;
     private String CURP;
    private String Correo;
 
-    public PersonaBO(String nombre, String Apellido, String fechaNacimiento, String direccion, String telefono, int edad, String domicilio, String genero, String CURP, String Correo) {
+    public PersonaBO(String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String domicilio, String genero, String CURP, String Correo) {
         this.nombre = nombre;
         this.Apellido = Apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.edad = edad;
         this.domicilio = domicilio;
         this.genero = genero;
         this.CURP = CURP;
@@ -42,7 +43,7 @@ public abstract class PersonaBO {
         return Apellido;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -54,9 +55,7 @@ public abstract class PersonaBO {
         return telefono;
     }
 
-    public int getEdad() {
-        return edad;
-    }
+   
 
     public String getDomicilio() {
         return domicilio;
@@ -75,5 +74,7 @@ public abstract class PersonaBO {
     }
    
    
-   
+   public int calcularEdadPersona(){
+   return Period.between(fechaNacimiento, LocalDate.now()).getYears();
+   }
 }

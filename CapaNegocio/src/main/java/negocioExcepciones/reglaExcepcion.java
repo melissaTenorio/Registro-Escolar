@@ -8,8 +8,8 @@ package negocioExcepciones;
  *
  * @author melis
  */
-public class reglaExcepcion extends Exception {
-    public reglaExcepcion (String mensaj){
+public class ReglaExcepcion extends Exception {
+    public ReglaExcepcion (String mensaj){
     super(mensaj);
     }
 }

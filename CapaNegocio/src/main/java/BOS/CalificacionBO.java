@@ -6,6 +6,7 @@ package BOS;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import negocioExcepciones.ReglaExcepcion;
 
 /**
  *
@@ -13,12 +14,12 @@ import java.util.Objects;
  */
 public class CalificacionBO {
     private String idCalificacion;
-    private Inscripcion inscripcion; // Asociación al BOS
+    private InscripcionBO inscripcion; // Asociación al BOS
     private double valor; 
     private String tipo; // Ej: Parcial 1, Tarea, Final
     private LocalDate fechaRegistro;
     
-   public Calificacion(String idCalificacion, Inscripcion inscripcion, double valor, String tipo) throws ReglaNegocioException {
+   public CalificacionBO (String idCalificacion, InscripcionBO inscripcion, double valor, String tipo) throws ReglaExcepcion {
         this.idCalificacion = Objects.requireNonNull(idCalificacion);
         this.inscripcion = Objects.requireNonNull(inscripcion);
         this.fechaRegistro = LocalDate.now();
@@ -42,5 +43,19 @@ public class CalificacionBO {
     
     public boolean PasaOno(){
     return this.valor>=70;
+    }
+    
+    public void actualizarValor(double nuevoValor) throws ReglaExcepcion {
+        if (nuevoValor < 0.0 || nuevoValor > 100.0) {
+            throw new ReglaExcepcion("La calificación debe estar en el rango de 0 a 100.");
+        }
+        this.valor = nuevoValor;
+    }
+
+    /**
+     * Método de Lógica: Regla de aprobación
+     */
+    public boolean esAprobatoria() {
+        return this.valor >= 70.0;
     }
 }
