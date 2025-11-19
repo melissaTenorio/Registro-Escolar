@@ -18,10 +18,12 @@ public class AdministradorBO extends UsuarioBO {
     private String idAdministrador;
     private List<String> carrerasGestionadas; /*saber a que carrera o departamento pertenece*/
 
-    public AdministradorBO(String idAdministrador, String carreraAsignada, String idUsuario, String contraseña, RolUsuario rol, String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String domicilio, String genero, String CURP, String Correo) {
-        super(idUsuario, contraseña, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, domicilio, genero, CURP, Correo);
+   
+
+    public AdministradorBO(String idAdministrador, List<String> carrerasGestionadas, String idUsuario, String contraseñaHASH, RolUsuario rol, String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String genero, String CURP, String Correo) {
+        super(idUsuario, contraseñaHASH, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, genero, CURP, Correo);
         this.idAdministrador = idAdministrador;
-        this.carrerasGestionadas = new ArrayList<>();
+        this.carrerasGestionadas = carrerasGestionadas;
         if (carrerasGestionadas != null) {
             this.carrerasGestionadas.addAll(carrerasGestionadas);
         }

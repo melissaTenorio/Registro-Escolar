@@ -17,18 +17,16 @@ public abstract class PersonaBO {
     private String direccion;
     private String telefono;
    // private int edad; quitaremos la edad para que el sistema la calcule por si solo con la fecha de nacimiento
-    private String domicilio;
     private String genero;
     private String CURP;
    private String Correo;
 
-    public PersonaBO(String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String domicilio, String genero, String CURP, String Correo) {
+    public PersonaBO(String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String genero, String CURP, String Correo) {
         this.nombre = nombre;
         this.Apellido = Apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.domicilio = domicilio;
         this.genero = genero;
         this.CURP = CURP;
         this.Correo = Correo;
@@ -56,10 +54,6 @@ public abstract class PersonaBO {
     }
 
    
-
-    public String getDomicilio() {
-        return domicilio;
-    }
 
     public String getGenero() {
         return genero;

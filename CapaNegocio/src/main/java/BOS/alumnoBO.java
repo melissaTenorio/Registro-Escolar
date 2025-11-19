@@ -19,14 +19,16 @@ private String matricula; /*el id del usuario aluno*/
     private String contactoEmergencia;
     private EstadoInscripcion estado;// activo/inactivo
 
-    public AlumnoBO(String matricula, String carrera, byte semestreCursando, String contactoEmergencia, EstadoInscripcion estado, String idUsuario, String contraseña, RolUsuario rol, String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String domicilio, String genero, String CURP, String Correo) {
-        super(idUsuario, contraseña, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, domicilio, genero, CURP, Correo);
+    public AlumnoBO(String matricula, String carrera, byte semestreCursando, String contactoEmergencia, EstadoInscripcion estado, String idUsuario, String contraseñaHASH, RolUsuario rol, String nombre, String Apellido, LocalDate fechaNacimiento, String direccion, String telefono, String genero, String CURP, String Correo) {
+        super(idUsuario, contraseñaHASH, rol, nombre, Apellido, fechaNacimiento, direccion, telefono, genero, CURP, Correo);
         this.matricula = matricula;
         this.carrera = carrera;
         this.semestreCursando = semestreCursando;
         this.contactoEmergencia = contactoEmergencia;
         this.estado = estado;
     }
+
+   
 
     
     
