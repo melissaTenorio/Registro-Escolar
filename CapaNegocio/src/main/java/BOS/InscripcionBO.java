@@ -72,8 +72,7 @@ class InscripcionBO {
     }
     
     public boolean puedeInscribirse(){
-        return !"Condicional".equalsIgnoreCase(estatus) && 
-               !"Baja".equalsIgnoreCase(estatus
-               );
+        return !"Condicional".equalsIgnoreCase(estatus)&& 
+               !"Baja".equalsIgnoreCase(estatus);
     }
 }
