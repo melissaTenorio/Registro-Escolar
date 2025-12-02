@@ -18,6 +18,16 @@ public class DatosPersonales {
     private String telefono;
     private String telefonoEmergencia;
 
+    public DatosPersonales(String nombre, String apellido, String curp, String correo, String telefono, String telefonoEmergencia) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.curp = curp;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.telefonoEmergencia = telefonoEmergencia;
+    }
+
+    
     //getter y setters
     public String getNombre() {
         return nombre;
@@ -75,6 +85,15 @@ public class DatosPersonales {
         private String puesto;
         private String departamento;
 
+        public DatosRolDAO(String matricula, String idProfesor, String puesto, String departamento) {
+            this.matricula = matricula;
+            this.idProfesor = idProfesor;
+            this.puesto = puesto;
+            this.departamento = departamento;
+        }
+
+        
+        
         public String getMatricula() {
             return matricula;
         }

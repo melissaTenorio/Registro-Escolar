@@ -18,6 +18,16 @@ public class inscripcionDAO {
     private Date fechaInscripcion;
     private String estatus;
 
+    public inscripcionDAO(String _id, String alumnoId, String grupoId, Date fechaInscripcion, String estatus) {
+        this._id = _id;
+        this.alumnoId = alumnoId;
+        this.grupoId = grupoId;
+        this.fechaInscripcion = fechaInscripcion;
+        this.estatus = estatus;
+    }
+
+    
+    
     public String getId() {
         return _id;
     }

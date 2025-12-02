@@ -13,6 +13,15 @@ public class MateriaDAO {
     private String _id;
     private String nombreMateria;
     private int cantCreditos;
+
+    public MateriaDAO(String _id, String nombreMateria, int cantCreditos) {
+        this._id = _id;
+        this.nombreMateria = nombreMateria;
+        this.cantCreditos = cantCreditos;
+    }
+    
+    
+    
     
     /*getters y setters aqui si van ambos*/
 
