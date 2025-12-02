@@ -5,18 +5,29 @@
 package capapersistencia.repositorios;
 import java.util.List;
 /**
- *@param <T>
- * @return
+ * @param <T>
  * @author melis
  */
-public interface IGenericRepositorio {
+public interface IGenericRepositorio<T> {
     /**
      * @param dato
      */
     void guardar(T dato);
-    
-    T buscarPorId();
+    /**
+     * @param id
+     * @return 
+     */
+    T buscarPorId(String id);
+    /**
+     * @return 
+     */
     List<T> buscaTodo();
-    void actualiza();
-    void eliminar();
+    /**
+     * @param dato
+     */
+    void actualiza(T dato);
+    /**
+     * @param id
+     */
+    void eliminar(String id);
 }
